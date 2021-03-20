@@ -12,11 +12,10 @@ public class Main {
     ///массив для добавления в метод output
     static byte[] dataByte;
     //создаю ArrayList для более удобной сортировки
-    static List<String> list = new ArrayList<>();
 
     public static void main(String[] args) throws UnsupportedEncodingException {
 
-        output("Мы шли через реку голопом", "Hello.txt");
+        output("Мы шли через Шли реку голопом", "Hello.txt");
         input("Hello.txt");
 
     }
@@ -40,7 +39,9 @@ public class Main {
     public static void output(String data, String fileName) {
         try (FileOutputStream fileOutputStream = new FileOutputStream(fileName)) {
             // преобразую массив String в коллекцию
-            list = Arrays.asList(strArr);
+            Set<String> set = new HashSet<>(Arrays.asList(strArr));
+
+            List list=new ArrayList(set);
             //сортирую коллекцию
             Collections.sort(list);
 
