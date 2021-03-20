@@ -11,7 +11,6 @@ public class Main {
     static String[] strArr = data.split(" ");
     ///массив для добавления в метод output
     static byte[] dataByte;
-    //создаю ArrayList для более удобной сортировки
 
     public static void main(String[] args) throws UnsupportedEncodingException {
 
@@ -40,11 +39,11 @@ public class Main {
         try (FileOutputStream fileOutputStream = new FileOutputStream(fileName)) {
             // преобразую массив String в коллекцию
             Set<String> set = new HashSet<>(Arrays.asList(strArr));
-
+            //Создаю коллекцию List для возможности сортировки
             List list=new ArrayList(set);
             //сортирую коллекцию
             Collections.sort(list);
-
+            // преобразую коллекцию в строку для возможности преобразования в массив byte
             String str = String.join(" ", list);
 
 
